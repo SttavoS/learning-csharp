@@ -6,25 +6,17 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
-            Cliente gustavo = new Cliente();
-            gustavo.nome = "Gustavo Schneider";
-            gustavo.cpf = "123.456.789-10";
-            gustavo.profissao = "Desenvolvedor";
-            ContaCorrente conta1 = new ContaCorrente();
-            conta1.titular = gustavo;
-            conta1.agencia = 8639;
-            conta1.numero = 123456;
+            Cliente gustavo = new Cliente("Gustavo Schneider", "123.456.789-10", "Desenvolvedor");
+            ContaCorrente conta1 = new ContaCorrente(gustavo, 863);
 
-            Console.WriteLine($"O titular da conta 1 é {conta1.titular.nome}");
+            Console.WriteLine($"O titular da conta 1 é {conta1.Titular.Nome}");
+            Console.WriteLine($"A agência da conta é {conta1.Agencia} e o número {conta1.Numero}");
+            Console.WriteLine($"Com saldo de {conta1.Saldo}");
 
             conta1.Depositar(500);
-            bool resultadoSaque = conta1.Sacar(200);
-            Console.WriteLine($"O resultado do saque foi {resultadoSaque}");
-
-            ContaCorrente conta2 = new ContaCorrente();
-            conta1.Tranferir(150, conta2);
-            Console.WriteLine($"O saldo da conta 1 é de R$ {conta1.saldo}");
-            Console.WriteLine($"O saldo da conta 2 é de R$ {conta2.saldo}");
+            Console.WriteLine($"Saldo após o deposito é de {conta1.Saldo}");
+            conta1.Sacar(200);
+            Console.WriteLine($"Saldo após o saque é de {conta1.Saldo}");
         }
     }
 }
