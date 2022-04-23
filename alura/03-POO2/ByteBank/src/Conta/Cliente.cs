@@ -1,4 +1,4 @@
-namespace ByteBank;
+namespace ByteBank.Conta;
 
 public class Cliente
 {
