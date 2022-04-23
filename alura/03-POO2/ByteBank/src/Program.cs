@@ -7,6 +7,11 @@ public class Program
 {
     static void Main(string[] args)
     {
+        CriarConta();
+    }
+
+    public static void CriarConta()
+    {
         var gustavo = new Cliente("Gustavo Schneider", "123.456.789-10", "Desenvolvedor");
         var conta1 = new ContaCorrente(gustavo, 863);
 
