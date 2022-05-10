@@ -10,7 +10,7 @@ public class Program
 {
     static void Main(string[] args)
     {
-        // CriarConta();
+        CriarConta();
         // CalcularBonificacao();
         // UsarSistema();
     }
@@ -30,11 +30,11 @@ public class Program
         Console.WriteLine($"Saldo após o saque é de {conta1.Saldo}");
     }
 
-    public static void CalcularBonificacao() 
+    public static void CalcularBonificacao()
     {
         var gerenciador = new GerenciadorDeBonificacao();
-        
-        var pedro = new Designer("Pedro","833.222.048-39");
+
+        var pedro = new Designer("Pedro", "833.222.048-39");
         var roberta = new Diretor("Roberta", "123", "159.753.398-04");
         var igor = new Auxiliar("Igor", "981.198.778-53");
         var camila = new GerenteDeConta("Camila", "456", "326.985.628-89");
@@ -59,7 +59,7 @@ public class Program
         var parceiro = new ParceiroComercial("123456");
 
         sistemaInterno.Logar(parceiro, "123456");
-        sistemaInterno.Logar(roberta, "123"); 
+        sistemaInterno.Logar(roberta, "123");
         sistemaInterno.Logar(camila, "abc");
     }
 }

@@ -11,13 +11,12 @@ public class ContaCorrente
     {
         this.Titular = titular;
         this.Agencia = agencia;
-        Random random = new Random();
-        this.Numero = $"{agencia}-{random.Next(0, 99999)}";
+        this.Numero = $"{agencia}-{new Random().Next(0, 99999)}";
         this.Saldo = 100.0;
     }
     public void Depositar(double valor)
     {
-        this.Saldo += valor;        
+        this.Saldo += valor;
     }
 
     public bool Sacar(double valor)
