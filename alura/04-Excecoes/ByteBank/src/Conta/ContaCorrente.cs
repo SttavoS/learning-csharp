@@ -13,7 +13,15 @@ public class ContaCorrente
         this.Agencia = agencia;
         this.Numero = $"{agencia}-{new Random().Next(0, 99999)}";
         this.Saldo = 100.0;
+        Validar();
     }
+
+    private void Validar()
+    {
+        if (Agencia <= 0)
+            throw new ArgumentException("O número da agência não pode ser menor que 1.", nameof(Agencia));
+    }
+
     public void Depositar(double valor)
     {
         this.Saldo += valor;
