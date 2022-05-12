@@ -3,6 +3,7 @@ using ByteBank.Conta;
 using ByteBank.Funcionarios;
 using ByteBank.Sistema;
 using ByteBank.Externo;
+using ByteBank.Exceptions;
 
 namespace ByteBank;
 
@@ -28,8 +29,12 @@ public class Program
 
             conta1.Depositar(500);
             Console.WriteLine($"Saldo após o deposito é de {conta1.Saldo}");
-            conta1.Sacar(200);
+            conta1.Sacar(-1000);
             Console.WriteLine($"Saldo após o saque é de {conta1.Saldo}");
+        }
+        catch (SaldoInsuficienteException exp)
+        {
+            Console.WriteLine(exp.Message);
         }
         catch (ArgumentException exp)
         {

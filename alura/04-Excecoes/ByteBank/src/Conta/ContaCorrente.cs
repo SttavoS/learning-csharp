@@ -1,3 +1,5 @@
+using ByteBank.Exceptions;
+
 namespace ByteBank.Conta;
 
 public class ContaCorrente
@@ -9,10 +11,10 @@ public class ContaCorrente
 
     public ContaCorrente(Cliente titular, int agencia)
     {
-        this.Titular = titular;
-        this.Agencia = agencia;
-        this.Numero = $"{agencia}-{new Random().Next(0, 99999)}";
-        this.Saldo = 100.0;
+        Titular = titular;
+        Agencia = agencia;
+        Numero = $"{agencia}-{new Random().Next(0, 99999)}";
+        Saldo = 100.0;
         Validar();
     }
 
@@ -24,29 +26,26 @@ public class ContaCorrente
 
     public void Depositar(double valor)
     {
-        this.Saldo += valor;
+        Saldo += valor;
     }
 
-    public bool Sacar(double valor)
+    public void Sacar(double valor)
     {
-        if (this.Saldo < valor)
-        {
-            return false;
-        }
+        if (valor < 0)
+            throw new ArgumentException("Você não pode realizar um saque com valor negativo.");
 
-        this.Saldo -= valor;
-        return true;
+        if (Saldo < valor)
+            throw new SaldoInsuficienteException($"Tentativa de saque de {valor} com saldo de {Saldo}.");
+
+        Saldo -= valor;
     }
 
-    public bool Tranferir(double valor, ContaCorrente contaDestino)
+    public void Tranferir(double valor, ContaCorrente contaDestino)
     {
-        if (this.Saldo < valor)
-        {
-            return false;
-        }
+        if (Saldo < valor)
+            throw new SaldoInsuficienteException($"Tentativa de tranferência de {valor} com saldo de {Saldo}.");
 
-        this.Saldo -= valor;
+        Sacar(valor);
         contaDestino.Depositar(valor);
-        return true;
     }
 }
