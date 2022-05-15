@@ -45,7 +45,14 @@ public class ContaCorrente
         if (Saldo < valor)
             throw new SaldoInsuficienteException($"Tentativa de tranferência de {valor} com saldo de {Saldo}.");
 
-        Sacar(valor);
+        try
+        {
+            Sacar(valor);
+        }
+        catch (SaldoInsuficienteException ex)
+        {
+            throw new OperacaoFinanceiraException("Operação não realizada.", ex);
+        }
         contaDestino.Depositar(valor);
     }
 }
