@@ -1,5 +1,4 @@
-﻿using System;
-using ByteBank.Conta;
+﻿using ByteBank.Conta;
 using ByteBank.Funcionarios;
 using ByteBank.Sistema;
 using ByteBank.Externo;

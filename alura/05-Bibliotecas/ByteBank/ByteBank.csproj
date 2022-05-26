@@ -1,10 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <!-- Habilitar caso queira gerar a documentação em XML. 
+    Foi desabilitado pois gerava warnings irritantes em todas as classes -->
+    <!-- <GenerateDocumentationFile>True</GenerateDocumentationFile> -->
   </PropertyGroup>
 
 </Project>
