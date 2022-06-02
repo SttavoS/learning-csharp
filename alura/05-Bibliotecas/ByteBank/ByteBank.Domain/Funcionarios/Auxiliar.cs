@@ -1,10 +1,10 @@
 using System;
 
-namespace ByteBank.Funcionarios;
+namespace ByteBank.Domain.Funcionarios;
 
 public class Auxiliar : Funcionario
 {
-    public Auxiliar(string nome, string cpf) : base(nome, 2000, cpf) {}
+    public Auxiliar(string nome, string cpf) : base(nome, 2000, cpf) { }
 
     public override void AumentarSalario()
     {

@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace ByteBank.Exceptions;
+namespace ByteBank.Domain.Exceptions;
 
 public class SaldoInsuficienteException : Exception
 {

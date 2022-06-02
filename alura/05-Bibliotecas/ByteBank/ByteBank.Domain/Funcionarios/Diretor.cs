@@ -1,12 +1,12 @@
-using ByteBank.Sistema;
+using ByteBank.Domain.Sistema;
 using System;
 
-namespace ByteBank.Funcionarios;
+namespace ByteBank.Domain.Funcionarios;
 
 public class Diretor : FuncionarioAutenticavel
 {
-    public Diretor(string nome, string senha, string cpf) : base(nome, senha, 5000, cpf) {}
-    
+    public Diretor(string nome, string senha, string cpf) : base(nome, senha, 5000, cpf) { }
+
     public override void AumentarSalario()
     {
         Salario *= 1.15;

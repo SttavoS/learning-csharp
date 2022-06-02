@@ -1,7 +1,7 @@
-using ByteBank.Sistema;
+using ByteBank.Domain.Sistema;
 using System;
 
-namespace ByteBank.Funcionarios
+namespace ByteBank.Domain.Funcionarios
 {
     public abstract class FuncionarioAutenticavel : Funcionario, IAutenticavel
     {

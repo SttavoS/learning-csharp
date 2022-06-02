@@ -1,7 +1,7 @@
-using ByteBank.Sistema;
+using ByteBank.Domain.Sistema;
 using System;
 
-namespace ByteBank.Externo;
+namespace ByteBank.Domain.Externo;
 
 public class ParceiroComercial : IAutenticavel
 {

@@ -1,12 +1,12 @@
-using ByteBank.Sistema;
+using ByteBank.Domain.Sistema;
 using System;
 
-namespace ByteBank.Funcionarios;
+namespace ByteBank.Domain.Funcionarios;
 
 public class GerenteDeConta : FuncionarioAutenticavel
 {
-    public GerenteDeConta(string nome, string senha, string cpf) : base(nome, senha, 4500, cpf) {}
-    
+    public GerenteDeConta(string nome, string senha, string cpf) : base(nome, senha, 4500, cpf) { }
+
     public override void AumentarSalario()
     {
         Salario *= 1.05;

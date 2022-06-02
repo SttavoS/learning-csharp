@@ -1,4 +1,4 @@
-namespace ByteBank.Conta;
+namespace ByteBank.Domain.Conta;
 
 public class Cliente
 {
@@ -12,4 +12,4 @@ public class Cliente
         this.Cpf = cpf;
         this.Profissao = profissao;
     }
-}    
+}

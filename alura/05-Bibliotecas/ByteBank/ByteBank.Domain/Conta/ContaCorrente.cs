@@ -1,6 +1,6 @@
-using ByteBank.Exceptions;
+using ByteBank.Domain.Exceptions;
 
-namespace ByteBank.Conta;
+namespace ByteBank.Domain.Conta;
 
 /// <summary>
 /// Classe que representa uma Conta Corrente

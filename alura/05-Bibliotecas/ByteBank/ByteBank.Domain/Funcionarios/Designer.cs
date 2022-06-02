@@ -1,10 +1,10 @@
 using System;
 
-namespace ByteBank.Funcionarios;
+namespace ByteBank.Domain.Funcionarios;
 
 public class Designer : Funcionario
 {
-    public Designer(string nome, string cpf) : base(nome, 3000, cpf) {}
+    public Designer(string nome, string cpf) : base(nome, 3000, cpf) { }
 
     public override void AumentarSalario()
     {

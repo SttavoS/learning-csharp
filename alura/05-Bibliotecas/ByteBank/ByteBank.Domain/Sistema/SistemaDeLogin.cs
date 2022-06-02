@@ -1,7 +1,4 @@
-using System;
-using ByteBank.Funcionarios;
-
-namespace ByteBank.Sistema;
+namespace ByteBank.Domain.Sistema;
 
 public class SistemaDeLogin
 {
@@ -16,6 +13,6 @@ public class SistemaDeLogin
         }
 
         Console.WriteLine("Bem-vindo ao sistema!");
-        return true;        
+        return true;
     }
 }

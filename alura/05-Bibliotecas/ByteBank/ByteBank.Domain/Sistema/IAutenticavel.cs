@@ -1,6 +1,6 @@
 using System;
 
-namespace ByteBank.Sistema;
+namespace ByteBank.Domain.Sistema;
 
 public interface IAutenticavel
 {

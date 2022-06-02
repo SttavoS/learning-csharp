@@ -1,5 +1,4 @@
-using ByteBank.Funcionarios;
-using System;
+using ByteBank.Domain.Funcionarios;
 
 namespace ByteBank;
 
@@ -11,7 +10,7 @@ public class GerenciadorDeBonificacao
     {
         _totalBonificacao += funcionario.GetBonificacao();
     }
-    
+
     public double GetTotalBonificacao()
     {
         return _totalBonificacao;

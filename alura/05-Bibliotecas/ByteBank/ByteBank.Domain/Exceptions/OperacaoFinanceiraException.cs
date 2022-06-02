@@ -1,4 +1,4 @@
-namespace ByteBank.Exceptions;
+namespace ByteBank.Domain.Exceptions;
 
 public class OperacaoFinanceiraException : Exception
 {
