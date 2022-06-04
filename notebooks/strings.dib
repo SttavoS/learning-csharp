@@ -1,5 +1,9 @@
 #!markdown
 
+# Strings em C#
+
+#!markdown
+
 ### Declarando variaveis do tipo String
 Strings podem serem declaradas utilizando a palavra reservada `string`.
 
@@ -12,6 +16,16 @@ Console.WriteLine(texto);
 
 #!markdown
 
+### Concatenação de Strings
+
+#!csharp
+
+string greetings = "Hello";
+string name = "Gustavo";
+Console.WriteLine(greetings + " " + name + "!");
+
+#!markdown
+
 ### Interpolação de Strings
 
 O C# permite a interpolação de strings, para isso é preciso colocar antes das aspas duplas o caractere `$`. As variáveis precisam estarem entre chaves `{}`.
@@ -21,3 +35,11 @@ O C# permite a interpolação de strings, para isso é preciso colocar antes das
 string greetings = "Hello";
 string name = "Gustavo";
 Console.WriteLine($"{greetings} {name}!");
+
+#!markdown
+
+## Propriedades
+
+#!markdown
+
+## Métodos
