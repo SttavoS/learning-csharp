@@ -43,3 +43,64 @@ Console.WriteLine($"{greetings} {name}!");
 #!markdown
 
 ## Métodos
+
+#!markdown
+
+#### Remove
+Retorna uma nova string contendo todos os caracteres até o índice informado.
+
+#!csharp
+
+var texto = "O Rato roeu a roupa do Rei de Roma";
+var indice = texto.IndexOf("de");
+
+Console.WriteLine(texto.Remove(indice));
+
+#!markdown
+
+#### ToUpper e ToLower
+`ToUpper` retorna uma cópia da string em caixa alta.   
+`ToLower` retorna uma cópia da string em caixa baixa.
+
+#!csharp
+
+var texto = "O Rato roeu a roupa do Rei de Roma";
+
+Console.WriteLine(texto.ToUpper());
+Console.WriteLine(texto.ToLower());
+
+#!markdown
+
+#### StartsWith
+Determina se uma string começa com uma string especificada. 
+
+#!csharp
+
+var texto = "O Rato roeu a roupa do Rei de Roma";
+
+Console.WriteLine(texto.StartsWith("O Rato"));
+Console.WriteLine(texto.StartsWith("a roupa"));
+
+#!markdown
+
+#### EndsWith
+Determina se uma string termina com uma string especificada.
+
+#!csharp
+
+var texto = "O Rato roeu a roupa do Rei de Roma";
+
+Console.WriteLine(texto.EndsWith("Roma"));
+Console.WriteLine(texto.EndsWith("Rato"));
+
+#!markdown
+
+#### Contains
+Determina se uma string contém um valor especificado.
+
+#!csharp
+
+var texto = "O Rato roeu a roupa do Rei de Roma";
+
+Console.WriteLine(texto.Contains("Roma"));
+Console.WriteLine(texto.Contains("Paris"));
