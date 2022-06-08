@@ -1,0 +1,40 @@
+#!markdown
+
+### Expresões Regulares (Regex)
+
+#!csharp
+
+using System.Text.RegularExpressions;
+
+var texto = "Meu número é 4002-8922";
+var pattern = "[0123456789][0123456789][0123456789][0123456789][-][0123456789][0123456789][0123456789][0123456789]";
+
+Console.WriteLine(Regex.IsMatch(texto, pattern));
+
+#!csharp
+
+var pattern = "[0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9]";
+
+Console.WriteLine(Regex.IsMatch(texto, pattern));
+
+#!markdown
+
+##### Quantificadores
+
+#!csharp
+
+var pattern = "[0-9]{4,5}-{0,1}[0-9]{4}";
+
+Console.WriteLine(Regex.IsMatch(texto, pattern));
+
+#!csharp
+
+var pattern = "[0-9]{4}[-][0-9]{4}";
+
+Console.WriteLine(Regex.IsMatch(texto, pattern));
+
+#!csharp
+
+var pattern = "[0-9]{4,5}-?[0-9]{4}";
+
+Console.WriteLine(Regex.IsMatch(texto, pattern));
