@@ -1,0 +1,15 @@
+#!markdown
+
+## Classe Object
+É a classe base de todas as classes do .NET, é a raiz da hierarquia de classes aonde todas derivam dela. Fornece alguns métodos baixo nível para as classes derivadas.
+
+#!markdown
+
+### Object.ToString()
+Por padrão, retorna o namespace completo do objeto. É um método `virtual` e pode ser extendido por uma classe para substituir o comportamento padrão.
+
+#!csharp
+
+Object objeto = new Object();
+
+Console.WriteLine(objeto.ToString());
