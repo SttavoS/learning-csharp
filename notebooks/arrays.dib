@@ -1,0 +1,25 @@
+#!csharp
+
+int[] idades = new int[5];
+idades[0] = 23;
+idades[1] = 58;
+idades[2] = 37;
+idades[3] = 88;
+idades[4] = 64;
+
+Console.WriteLine(idades[3]);
+
+#!csharp
+
+int[] idades = new int[] { 23, 58, 37, 88, 64 };
+
+Console.WriteLine(idades[3]);
+
+#!csharp
+
+int[] idades = new int[] { 23, 58, 37, 88, 64 };
+
+for (int i = 0; i < idades.Length; i++)
+{
+    Console.WriteLine($"A idade no índice {i} é {idades[i]}.");
+}
