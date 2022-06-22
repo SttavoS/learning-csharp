@@ -99,4 +99,18 @@ public class ContaCorrente
         }
         contaDestino.Depositar(valor);
     }
+
+    /// <summary>
+    /// Verifica se dois objetos instâncias de <see cref="ContaCorrente"/> são iguais.
+    /// </summary>
+    /// <param name="obj">Um objeto a ser comparado com uma instância de <see cref="ContaCorrente"/></param>
+    public override bool Equals(object? obj)
+    {
+        var outraConta = obj as ContaCorrente;
+
+        if (outraConta == null)
+            return false;
+
+        return Agencia == outraConta.Agencia && Numero == outraConta.Numero;
+    }
 }

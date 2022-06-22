@@ -18,7 +18,6 @@ public class ListaDeContaCorrentes
         VerificarCapacidade(_proximaPosicao + 1);
 
         _itens[_proximaPosicao] = item;
-        Console.WriteLine($"Adicionado item na posição {_proximaPosicao}");
         _proximaPosicao++;
     }
 
@@ -30,7 +29,6 @@ public class ListaDeContaCorrentes
         }
 
         int novoTamanho = _itens.Length * 2;
-        Console.WriteLine("Aumentando capacidade da lista!");
 
         if (novoTamanho < tamanhoNecessario)
         {
@@ -45,5 +43,38 @@ public class ListaDeContaCorrentes
         }
 
         _itens = novoArray;
+    }
+
+    public void Remover(ContaCorrente item)
+    {
+        int indiceItem = -1;
+
+        for (int i = 0; i < _proximaPosicao; i++)
+        {
+            var itemAtual = _itens[i];
+
+            if (itemAtual.Equals(item))
+            {
+                indiceItem = i;
+                break;
+            }
+        }
+
+        for (int i = indiceItem; i < _proximaPosicao - 1; i++)
+        {
+            _itens[i] = _itens[i + 1];
+        }
+
+        _proximaPosicao--;
+        _itens[_proximaPosicao] = null;
+    }
+
+    public void EscreverListaInteira()
+    {
+        for (int i = 0; i < _proximaPosicao; i++)
+        {
+            var conta = _itens[i];
+            Console.WriteLine($"Conta no índice {i}: numero {conta.Agencia} {conta.Numero}");
+        }
     }
 }
