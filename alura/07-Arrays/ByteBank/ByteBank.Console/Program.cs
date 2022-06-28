@@ -91,8 +91,9 @@ public class Program
         lista.Adicionar(new ContaCorrente(joaozinho, 123));
         lista.Adicionar(new ContaCorrente(joaozinho, 123));
 
-        lista.EscreverListaInteira();
+        // lista.EscreverListaInteira();
         lista.Remover(contaDaMariazinha);
-        lista.EscreverListaInteira();
+        // lista.EscreverListaInteira();
+        Console.WriteLine(lista.GetItemNoIndice(4).Numero);
     }
 }

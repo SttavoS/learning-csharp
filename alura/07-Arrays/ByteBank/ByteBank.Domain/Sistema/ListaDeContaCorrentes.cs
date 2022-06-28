@@ -7,10 +7,28 @@ public class ListaDeContaCorrentes
     private ContaCorrente[] _itens;
     private int _proximaPosicao;
 
+    public ContaCorrente this[int indice]
+    {
+        get
+        {
+            return GetItemNoIndice(indice);
+        }
+    }
+
     public ListaDeContaCorrentes(int capacidadeInicial = 5)
     {
         _itens = new ContaCorrente[capacidadeInicial];
         _proximaPosicao = 0;
+    }
+
+    public ContaCorrente GetItemNoIndice(int indice)
+    {
+        if (indice < 0 || indice >= _proximaPosicao)
+        {
+            throw new ArgumentOutOfRangeException(nameof(indice));
+        }
+
+        return _itens[indice];
     }
 
     public void Adicionar(ContaCorrente item)
@@ -19,6 +37,14 @@ public class ListaDeContaCorrentes
 
         _itens[_proximaPosicao] = item;
         _proximaPosicao++;
+    }
+
+    public void AdicionarVarios(params ContaCorrente[] itens)
+    {
+        foreach (ContaCorrente conta in itens)
+        {
+            Adicionar(conta);
+        }
     }
 
     private void VerificarCapacidade(int tamanhoNecessario)
