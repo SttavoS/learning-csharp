@@ -80,7 +80,7 @@ public class Program
         var joaozinho = new Cliente("Joãozinho", "45678912345", "Pedreiro de Software");
         var mariazinha = new Cliente("Mariazinha", "8489498451684", "Arquiteta de Software");
         var contaDaMariazinha = new ContaCorrente(mariazinha, 456);
-        var lista = new ListaDeContaCorrentes();
+        var lista = new Lista<ContaCorrente>();
         lista.Adicionar(new ContaCorrente(joaozinho, 123));
         lista.Adicionar(new ContaCorrente(joaozinho, 123));
         lista.Adicionar(new ContaCorrente(joaozinho, 123));

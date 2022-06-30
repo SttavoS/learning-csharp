@@ -1,13 +1,11 @@
-using ByteBank.Domain.Conta;
-
 namespace ByteBank.Domain.Sistema;
 
-public class ListaDeContaCorrentes
+public class Lista<T>
 {
-    private ContaCorrente[] _itens;
+    private T[] _itens;
     private int _proximaPosicao;
 
-    public ContaCorrente this[int indice]
+    public T this[int indice]
     {
         get
         {
@@ -15,13 +13,13 @@ public class ListaDeContaCorrentes
         }
     }
 
-    public ListaDeContaCorrentes(int capacidadeInicial = 5)
+    public Lista(int capacidadeInicial = 5)
     {
-        _itens = new ContaCorrente[capacidadeInicial];
+        _itens = new T[capacidadeInicial];
         _proximaPosicao = 0;
     }
 
-    public ContaCorrente GetItemNoIndice(int indice)
+    public T GetItemNoIndice(int indice)
     {
         if (indice < 0 || indice >= _proximaPosicao)
         {
@@ -31,7 +29,7 @@ public class ListaDeContaCorrentes
         return _itens[indice];
     }
 
-    public void Adicionar(ContaCorrente item)
+    public void Adicionar(T item)
     {
         VerificarCapacidade(_proximaPosicao + 1);
 
@@ -39,11 +37,11 @@ public class ListaDeContaCorrentes
         _proximaPosicao++;
     }
 
-    public void AdicionarVarios(params ContaCorrente[] itens)
+    public void AdicionarVarios(params T[] itens)
     {
-        foreach (ContaCorrente conta in itens)
+        foreach (T item in itens)
         {
-            Adicionar(conta);
+            Adicionar(item);
         }
     }
 
@@ -61,7 +59,7 @@ public class ListaDeContaCorrentes
             novoTamanho = tamanhoNecessario;
         }
 
-        var novoArray = new ContaCorrente[novoTamanho];
+        var novoArray = new T[novoTamanho];
 
         for (int indice = 0; indice < _itens.Length; indice++)
         {
@@ -71,7 +69,7 @@ public class ListaDeContaCorrentes
         _itens = novoArray;
     }
 
-    public void Remover(ContaCorrente item)
+    public void Remover(T item)
     {
         int indiceItem = -1;
 
@@ -92,15 +90,13 @@ public class ListaDeContaCorrentes
         }
 
         _proximaPosicao--;
-        _itens[_proximaPosicao] = null;
     }
 
     public void EscreverListaInteira()
     {
         for (int i = 0; i < _proximaPosicao; i++)
         {
-            var conta = _itens[i];
-            Console.WriteLine($"Conta no índice {i}: numero {conta.Agencia} {conta.Numero}");
+            var item = _itens[i];
         }
     }
 }
