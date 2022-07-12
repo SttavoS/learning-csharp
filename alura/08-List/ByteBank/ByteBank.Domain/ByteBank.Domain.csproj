@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\ByteBank.Shared\ByteBank.Shared.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!-- Habilitar caso queira gerar a documentação em XML. 
+    Foi desabilitado pois gerava warnings irritantes em todas as classes -->
+    <!-- <GenerateDocumentationFile>True</GenerateDocumentationFile> -->
+  </PropertyGroup>
+
+</Project>

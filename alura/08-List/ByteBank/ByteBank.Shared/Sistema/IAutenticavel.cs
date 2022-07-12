@@ -1,0 +1,6 @@
+namespace ByteBank.Shared.Sistema;
+
+public interface IAutenticavel
+{
+    bool Autenticar(string senha);
+}
