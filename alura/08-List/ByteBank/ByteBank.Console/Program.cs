@@ -3,6 +3,7 @@ using ByteBank.Domain.Funcionarios;
 using ByteBank.Shared.Sistema;
 using ByteBank.Domain.Externo;
 using ByteBank.Domain.Exceptions;
+using ByteBank.Shared.Extensions;
 
 namespace ByteBank;
 
@@ -11,7 +12,8 @@ public class Program
     static void Main(string[] args)
     {
         // CriarConta();
-        CriaListaDeContas();
+        // CriaListaDeContas();
+        CriaContasUsandoList();
         // CalcularBonificacao();
         // UsarSistema();
     }
@@ -95,5 +97,33 @@ public class Program
         lista.Remover(contaDaMariazinha);
         // lista.EscreverListaInteira();
         Console.WriteLine(lista.GetItemNoIndice(4).Numero);
+    }
+
+    public static void CriaContasUsandoList()
+    {
+        var joaozinho = new Cliente("Joãozinho", "45678912345", "Pedreiro de Software");
+        var mariazinha = new Cliente("Mariazinha", "8489498451684", "Arquiteta de Software");
+        var contaDaMariazinha = new ContaCorrente(mariazinha, 456);
+        var lista = new List<ContaCorrente>();
+        lista.Add(new ContaCorrente(joaozinho, 123));
+        lista.Add(new ContaCorrente(joaozinho, 123));
+        lista.Add(new ContaCorrente(joaozinho, 123));
+        lista.Add(new ContaCorrente(joaozinho, 123));
+        lista.Add(new ContaCorrente(joaozinho, 123));
+        lista.Add(contaDaMariazinha);
+        lista.Add(new ContaCorrente(joaozinho, 123));
+        lista.Add(new ContaCorrente(joaozinho, 123));
+        lista.Add(new ContaCorrente(joaozinho, 123));
+
+        lista.Remove(contaDaMariazinha);
+
+        Console.WriteLine(lista[4].Numero);
+
+        var idades = new List<int>();
+        idades.AddSeveral(4, 5, 6);
+        foreach (var idade in idades)
+        {
+            System.Console.WriteLine(idade);
+        }
     }
 }
