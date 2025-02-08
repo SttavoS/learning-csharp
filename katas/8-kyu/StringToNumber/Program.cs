@@ -8,6 +8,5 @@
         Console.WriteLine(SringToNumber("-7"));
     }
 
-    private static int SringToNumber(string input)
-        => Int32.Parse(input);
+    private static int SringToNumber(string input) => Int32.Parse(input);
 }
